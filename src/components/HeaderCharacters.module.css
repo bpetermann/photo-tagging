@@ -1,0 +1,34 @@
+
+.Wally {
+    grid-area: wally;
+    color: white;
+  }
+  
+  .Odlaw {
+    grid-area: odlaw;
+    color: white;
+  }
+  
+  .Wizard {
+    grid-area: wizzard;
+    color: white;
+  }
+  
+  .Wally-found {
+    grid-area: wally;
+    color: white;
+    opacity: 0.4;
+  }
+  
+  .Odlaw-found {
+    grid-area: odlaw;
+    color: white;
+    opacity: 0.4;
+  }
+  
+  .Wizard-found {
+    grid-area: wizzard;
+    color: white;
+    opacity: 0.4;
+  }
+  
