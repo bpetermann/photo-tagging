@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/photo-tagging/static/css/main.00a7d404.css",
+    "main.js": "/photo-tagging/static/js/main.29082dd9.js",
+    "static/media/outer-space.jpg": "/photo-tagging/static/media/outer-space.887553650cd0263e0a88.jpg",
+    "index.html": "/photo-tagging/index.html",
+    "main.00a7d404.css.map": "/photo-tagging/static/css/main.00a7d404.css.map",
+    "main.29082dd9.js.map": "/photo-tagging/static/js/main.29082dd9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00a7d404.css",
+    "static/js/main.29082dd9.js"
+  ]
+}
