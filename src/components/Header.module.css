@@ -7,7 +7,7 @@
   border-bottom: 1px solid #000;
   box-shadow: 2px 2px 6px #000;
   min-width: 1260px;
-  height: 22vh;
+  height: 360px;
 }
 
 .container {
@@ -18,7 +18,7 @@
     '. h1 .'
     '. h2 .'
     'wally odlaw wizzard';
-  height: 20vh;
+  height: 270px;
 }
 
 .container h1 {
@@ -29,4 +29,21 @@
   grid-area: h2;
   color: white;
   margin: 0.6rem;
+}
+
+@media only screen and (max-width: 520px) {
+  .section {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    grid-template-areas:
+      'h1 h1 h1'
+      '. h2  .'
+      'wally odlaw wizzard';
+    margin: 1.6rem;
+  }
 }

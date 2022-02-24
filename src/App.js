@@ -11,7 +11,7 @@ const App = () => {
     { name: 'Wizard', hasBeenFound: false },
   ]);
   const [gameover, setGameOver] = useState(false);
-  const [characterFound, setCharacterFound] = useState(null);
+  const [gameUpdate, setgameUpdate] = useState(null);
 
   useEffect(() => {
     let allCharactersFound = characters.every((item) => {
@@ -21,13 +21,16 @@ const App = () => {
       return false;
     });
 
-    if (allCharactersFound && !characterFound) {
+    if (allCharactersFound && !gameUpdate) {
       setGameOver(true);
+      setTimeout(function () {
+        window.location.reload();
+      }, 3000);
     }
-  }, [characters, characterFound]);
+  }, [characters, gameUpdate]);
 
   const characterDetectedHandler = (name) => {
-    setCharacterFound(name);
+    setgameUpdate(`${name} Found!`);
     let characterList = characters.map((item) => {
       if (item.name === name) {
         return { ...item, hasBeenFound: !item.hasBeenFound };
@@ -36,7 +39,14 @@ const App = () => {
     });
     setCharacters(characterList);
     setTimeout(function () {
-      setCharacterFound(null);
+      setgameUpdate(null);
+    }, 1500);
+  };
+
+  const noCharacterHandler = () => {
+    setgameUpdate('Try Again');
+    setTimeout(function () {
+      setgameUpdate(null);
     }, 1500);
   };
 
@@ -46,8 +56,9 @@ const App = () => {
       <PhotoTag
         characters={characters}
         characterDetected={characterDetectedHandler}
+        noCharacterHandler={noCharacterHandler}
       />
-      {characterFound && <GameUpdate characterFound={characterFound} />}
+      {gameUpdate && <GameUpdate gameUpdate={gameUpdate} />}
       {gameover && <GameOver />}
     </div>
   );

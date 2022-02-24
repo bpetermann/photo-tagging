@@ -15,6 +15,7 @@ const CharacterSelector = (props) => {
     props.onChoice(event.target.textContent);
   };
 
+  console.log(props.coordinates)
   return (
     <Fragment>
       <Backdrop onClose={props.onClose} />

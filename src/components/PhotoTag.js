@@ -39,7 +39,7 @@ const PhotoTag = (props) => {
       props.characterDetected(name);
       setShowCharacterSelector(false);
     } else {
-      alert('Fail!');
+      props.noCharacterHandler();
       setShowCharacterSelector(false);
     }
   };
