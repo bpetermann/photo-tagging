@@ -1,13 +1,11 @@
 import { Fragment } from 'react';
 import classes from './CharacterSelector.module.css';
-
-const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onClose}></div>;
-};
+import Backdrop from './Backdrop';
 
 const CharacterSelector = (props) => {
   const { pageY, pageX } = props.coordinates;
-  const notFoundCharacters = props.characters.filter(
+
+  const wantedCharacters = props.characters.filter(
     (item) => item.hasBeenFound === false
   );
 
@@ -15,7 +13,6 @@ const CharacterSelector = (props) => {
     props.onChoice(event.target.textContent);
   };
 
-  console.log(props.coordinates)
   return (
     <Fragment>
       <Backdrop onClose={props.onClose} />
@@ -23,7 +20,7 @@ const CharacterSelector = (props) => {
         className={classes.selector}
         style={{ top: pageY + 'px', left: pageX + 'px' }}
       >
-        {notFoundCharacters.map((item) => {
+        {wantedCharacters.map((item) => {
           return (
             <button
               key={item.name}

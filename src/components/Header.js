@@ -6,7 +6,6 @@ const Header = (props) => {
     <div className={classes.section}>
       <div className={classes.container}>
         <h1>Photo Tagging App</h1>
-        <h2>Find:</h2>
         {props.characters.map((item) => (
           <HeaderCharacters key={item.name} character={item} />
         ))}

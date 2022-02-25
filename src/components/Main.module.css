@@ -4,14 +4,8 @@
   align-items: center;
 }
 
-.main img {
-  margin: 2rem;
-  width: 1260px;
-}
-
 @media only screen and (max-width: 520px) {
   .main {
-    
     justify-content: start;
     align-items: start;
   }

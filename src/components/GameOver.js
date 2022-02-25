@@ -1,14 +1,12 @@
 import { Fragment } from 'react';
 import classes from './GameOver.module.css';
-const Backdrop = (props) => {
-  return <div className={classes.backdrop}></div>;
-};
+import Backdrop from './Backdrop';
 
 const GameOver = () => {
   return (
     <Fragment>
       <Backdrop />
-      <div className={classes.gamestats}>Congratulations!</div>;
+      <div className={classes.gameover}>Congratulations!</div>;
     </Fragment>
   );
 };

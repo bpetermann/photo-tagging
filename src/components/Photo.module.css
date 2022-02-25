@@ -1,0 +1,11 @@
+.photo {
+  margin: 3rem;
+  width: 1260px;
+}
+
+@media only screen and (max-width: 520px) {
+  .photo {
+    margin: 0rem;
+    margin-top: 2rem;
+  }
+}

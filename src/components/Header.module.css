@@ -7,7 +7,7 @@
   border-bottom: 1px solid #000;
   box-shadow: 2px 2px 6px #000;
   min-width: 1260px;
-  height: 360px;
+  height: 270px;
 }
 
 .container {
@@ -16,19 +16,16 @@
   justify-items: center;
   grid-template-areas:
     '. h1 .'
-    '. h2 .'
+    '. . .'
     'wally odlaw wizzard';
-  height: 270px;
+  height: 100%;
 }
 
 .container h1 {
   grid-area: h1;
-}
-
-.container h2 {
-  grid-area: h2;
-  color: white;
-  margin: 0.6rem;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
 }
 
 @media only screen and (max-width: 520px) {

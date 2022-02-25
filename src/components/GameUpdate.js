@@ -1,11 +1,13 @@
 import classes from './GameUpdate.module.css';
 
 const GameUpdate = (props) => {
+  let style = classes.gamestats;
+
   return (
     <div
-      className={
-        classes[props.gameUpdate === 'Try Again' ? 'no-character' : 'gamestats']
-      }
+      className={`${style} ${
+        props.gameUpdate === 'Try Again' && classes.noCharacter
+      }`}
     >
       {props.gameUpdate}
     </div>

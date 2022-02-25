@@ -1,6 +1,6 @@
 import Header from './components/Header';
-import PhotoTag from './components/PhotoTag';
-import { useEffect, useState } from 'react';
+import Main from './components/Main';
+import { useEffect, useState, Fragment } from 'react';
 import GameOver from './components/GameOver';
 import GameUpdate from './components/GameUpdate';
 
@@ -15,10 +15,7 @@ const App = () => {
 
   useEffect(() => {
     let allCharactersFound = characters.every((item) => {
-      if (item.hasBeenFound === true) {
-        return true;
-      }
-      return false;
+      return item.hasBeenFound;
     });
 
     if (allCharactersFound && !gameUpdate) {
@@ -29,38 +26,35 @@ const App = () => {
     }
   }, [characters, gameUpdate]);
 
-  const characterDetectedHandler = (name) => {
-    setgameUpdate(`${name} Found!`);
+  const characterDetectedHandler = (text) => {
+    gameUpdateHandler(`${text} Found!`);
     let characterList = characters.map((item) => {
-      if (item.name === name) {
+      if (item.name === text) {
         return { ...item, hasBeenFound: !item.hasBeenFound };
       }
       return item;
     });
     setCharacters(characterList);
-    setTimeout(function () {
-      setgameUpdate(null);
-    }, 1500);
   };
 
-  const noCharacterHandler = () => {
-    setgameUpdate('Try Again');
+  const gameUpdateHandler = (text) => {
+    setgameUpdate(text);
     setTimeout(function () {
       setgameUpdate(null);
     }, 1500);
   };
 
   return (
-    <div className='container'>
+    <Fragment>
       <Header characters={characters} />
-      <PhotoTag
+      <Main
         characters={characters}
         characterDetected={characterDetectedHandler}
-        noCharacterHandler={noCharacterHandler}
+        gameUpdateHandler={gameUpdateHandler}
       />
       {gameUpdate && <GameUpdate gameUpdate={gameUpdate} />}
       {gameover && <GameOver />}
-    </div>
+    </Fragment>
   );
 };
 

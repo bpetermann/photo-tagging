@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import classes from './PhotoTag.module.css';
+import classes from './Main.module.css';
 import CharacterSelector from './CharacterSelector';
 import characterStats from '../CharacterArray';
+import Photo from './Photo';
 
 const PhotoTag = (props) => {
   const [selectorCoordinates, setselectorCoordinates] = useState('');
@@ -37,20 +38,15 @@ const PhotoTag = (props) => {
       selectedTag.offsetX <= chosenCharacter[0].offsetXEnd
     ) {
       props.characterDetected(name);
-      setShowCharacterSelector(false);
     } else {
-      props.noCharacterHandler();
-      setShowCharacterSelector(false);
+      props.gameUpdateHandler('Try Again');
     }
+    setShowCharacterSelector(false);
   };
 
   return (
     <div className={classes.main}>
-      <img
-        src={require('../images/outer-space.jpg')}
-        alt="Where's Wally? In outer Space"
-        onClick={coordinatesHandler}
-      />
+      <Photo onClick={coordinatesHandler} />
       {showCharacterSelector && (
         <CharacterSelector
           onClose={closeCharacterSelector}

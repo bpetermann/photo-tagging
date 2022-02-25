@@ -1,24 +1,19 @@
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 20;
-    background-color: rgba(0, 0, 0, 0.75);
+.gameover {
+  position: fixed;
+  z-index: 200;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  background-color: white;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  top: 45%;
+  left: 30%;
+  width: 40%;
+}
+
+@media only screen and (max-width: 520px) {
+  .game-over {
+    left: 15%;
   }
-  
-  .gamestats {
-    position: fixed;
-    z-index: 200;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 2px #ccc;
-    background-color: white;
-    padding: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    top: 45%;
-    left: 30%;
-    width: 40%;
-  }
-  
+}
