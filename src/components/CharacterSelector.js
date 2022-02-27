@@ -3,8 +3,6 @@ import classes from './CharacterSelector.module.css';
 import Backdrop from './Backdrop';
 
 const CharacterSelector = (props) => {
-  const { pageY, pageX } = props.coordinates;
-
   const wantedCharacters = props.characters.filter(
     (item) => item.hasBeenFound === false
   );
@@ -16,10 +14,7 @@ const CharacterSelector = (props) => {
   return (
     <Fragment>
       <Backdrop onClose={props.onClose} />
-      <div
-        className={classes.selector}
-        style={{ top: pageY + 'px', left: pageX + 'px' }}
-      >
+      <div className={classes.selector}>
         {wantedCharacters.map((item) => {
           return (
             <button

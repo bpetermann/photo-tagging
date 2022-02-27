@@ -5,7 +5,6 @@ import characterStats from '../CharacterArray';
 import Photo from './Photo';
 
 const PhotoTag = (props) => {
-  const [selectorCoordinates, setselectorCoordinates] = useState('');
   const [showCharacterSelector, setShowCharacterSelector] = useState(false);
   const [selectedTag, setSelectedTag] = useState({
     offsetY: null,
@@ -17,11 +16,6 @@ const PhotoTag = (props) => {
   };
 
   const coordinatesHandler = (event) => {
-    setselectorCoordinates({
-      pageY: event.pageY,
-      pageX: event.pageX,
-    });
-
     setSelectedTag({
       offsetY: event.nativeEvent.offsetY,
       offsetX: event.nativeEvent.offsetX,
@@ -51,7 +45,6 @@ const PhotoTag = (props) => {
         <CharacterSelector
           onClose={closeCharacterSelector}
           onChoice={compareChoiceHandler}
-          coordinates={selectorCoordinates}
           characters={props.characters}
         />
       )}
