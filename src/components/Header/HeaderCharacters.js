@@ -14,7 +14,7 @@ const HeaderCharacters = (props) => {
     >
       <h3>{props.character.name}</h3>
       <img
-        src={require('../images/' + props.character.name + '.png')}
+        src={require('../../images/' + props.character.name + '.png')}
         alt={props.character.name}
         className={classes[props.character.name + '-image']}
       />

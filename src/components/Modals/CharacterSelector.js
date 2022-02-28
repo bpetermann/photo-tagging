@@ -1,9 +1,12 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import classes from './CharacterSelector.module.css';
 import Backdrop from './Backdrop';
+import AuthContext from '../../store/auth-context';
 
 const CharacterSelector = (props) => {
-  const wantedCharacters = props.characters.filter(
+  const ctx = useContext(AuthContext);
+
+  const wantedCharacters = ctx.characters.filter(
     (item) => item.hasBeenFound === false
   );
 

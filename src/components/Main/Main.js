@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import classes from './Main.module.css';
-import CharacterSelector from './CharacterSelector';
-import characterStats from '../CharacterArray';
+import CharacterSelector from '../Modals/CharacterSelector';
+import characterStats from '../../CharacterArray';
 import Photo from './Photo';
+import AuthContext from '../../store/auth-context';
 
-const PhotoTag = (props) => {
+const Main = () => {
+  const ctx = useContext(AuthContext);
   const [showCharacterSelector, setShowCharacterSelector] = useState(false);
   const [selectedTag, setSelectedTag] = useState({
     offsetY: null,
@@ -31,9 +33,9 @@ const PhotoTag = (props) => {
       selectedTag.offsetX >= chosenCharacter[0].offsetXStart &&
       selectedTag.offsetX <= chosenCharacter[0].offsetXEnd
     ) {
-      props.characterDetected(name);
+      ctx.characterDetected(name);
     } else {
-      props.gameUpdateHandler('Try Again');
+      ctx.gameUpdateHandler('Try Again');
     }
     setShowCharacterSelector(false);
   };
@@ -45,11 +47,10 @@ const PhotoTag = (props) => {
         <CharacterSelector
           onClose={closeCharacterSelector}
           onChoice={compareChoiceHandler}
-          characters={props.characters}
         />
       )}
     </div>
   );
 };
 
-export default PhotoTag;
+export default Main;
