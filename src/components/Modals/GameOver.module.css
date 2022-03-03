@@ -17,7 +17,8 @@
 }
 
 @media only screen and (max-width: 520px) {
-  .game-over {
-    left: 15%;
+  .gameover {
+    left: 10%;
+    width: 80%;
   }
 }
