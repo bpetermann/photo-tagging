@@ -16,6 +16,7 @@
   color: #000;
   background-color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 .selector button:hover {

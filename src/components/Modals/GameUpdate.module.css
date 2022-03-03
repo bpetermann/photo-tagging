@@ -9,10 +9,9 @@
   padding: 1rem 2.5rem;
   text-align: center;
   box-sizing: border-box;
-  top: 40%;
+  top: 30%;
   left: 40%;
   width: 20%;
-  font-weight: 700;
   font-size: 1.1rem;
   line-height: 1.5rem;
   animation: slide-down 300ms ease-out forwards;

@@ -1,6 +1,7 @@
 .photo {
   margin: 3rem;
   width: 1260px;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1260px) {

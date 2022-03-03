@@ -9,18 +9,20 @@ const App = () => {
   const ctx = useContext(AuthContext);
   const [gameover, setGameOver] = useState(false);
 
-  useEffect(() => {
-    let allCharactersFound = ctx.characters.every((item) => {
-      return item.hasBeenFound;
-    });
+  const allCharactersFound = ctx.characters.every((item) => {
+    return item.hasBeenFound;
+  });
 
-    if (allCharactersFound && !ctx.gameUpdate) {
+  const gameOverHandler = allCharactersFound && !ctx.gameUpdate;
+
+  useEffect(() => {
+    if (gameOverHandler) {
       setGameOver(true);
       setTimeout(function () {
         window.location.reload();
       }, 3000);
     }
-  }, [ctx.characters, ctx.gameUpdate]);
+  }, [gameOverHandler]);
 
   return (
     <Fragment>
